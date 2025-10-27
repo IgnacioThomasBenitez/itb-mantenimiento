@@ -1,7 +1,7 @@
 ---
 const currentYear = new Date().getFullYear();
 const whatsappNumber = "+542215610748";
-const whatsappMessage = encodeURIComponent("Hola! Quisiera más información sobre ITB Mantenimiento.");
+const whatsappMessage = encodeURIComponent("Hola! Quisiera mas informacion sobre ITB Mantenimiento.");
 const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g,'')}?text=${whatsappMessage}`;
 ---
 
@@ -9,7 +9,6 @@ const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g,'')}?text=${w
   <div style="max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; width: 100%;">
 
-      <!-- Logo y descripción -->
       <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <img 
           src="/logo.jpg" 
@@ -19,14 +18,13 @@ const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g,'')}?text=${w
           onmouseout="this.style.transform='scale(1)';"
         >
         <p style="line-height: 1.6; font-size: 0.95rem;">
-          Ofrecemos soluciones profesionales en mantenimiento y reparación de equipos informáticos,
-          garantizando calidad, confianza y soporte técnico integral.
+          Ofrecemos soluciones profesionales en mantenimiento y reparacion de equipos informaticos,
+          garantizando calidad, confianza y soporte tecnico integral.
         </p>
       </div>
 
-      <!-- Enlaces rápidos -->
-      <nav aria-label="Enlaces rápidos" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-        <h3 style="color: var(--color-itb-pink); font-weight: 600; font-size: 1.125rem; margin-bottom: 1rem;">Enlaces Rápidos</h3>
+      <nav aria-label="Enlaces rapidos" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <h3 style="color: var(--color-itb-pink); font-weight: 600; font-size: 1.125rem; margin-bottom: 1rem;">Enlaces Rapidos</h3>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
           <li>
             <a href="/" 
@@ -63,7 +61,6 @@ const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g,'')}?text=${w
         </ul>
       </nav>
 
-      <!-- Contacto -->
       <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <h3 style="color: var(--color-itb-pink); font-weight: 600; font-size: 1.125rem; margin-bottom: 1rem;">Contacto</h3>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem;">
@@ -78,11 +75,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g,'')}?text=${w
           </li>
           <li style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
             <span>📱</span>
-            <a href={`tel:${whatsappNumber}`}
+            <a href="tel:+542215610748"
                style="color: var(--color-itb-gray-light); text-decoration: none; transition: color 0.3s;"
                onmouseover="this.style.color='var(--color-itb-pink)';"
                onmouseout="this.style.color='var(--color-itb-gray-light)';">
-              {whatsappNumber}
+              +54 9 221 5610748
             </a>
           </li>
           <li style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
@@ -94,13 +91,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g,'')}?text=${w
 
     </div>
 
-    <!-- Línea inferior -->
     <div style="border-top: 1px solid var(--color-itb-gray); margin-top: 2.5rem; padding-top: 1.5rem; text-align: center; font-size: 0.875rem;">
       <p>&copy; {currentYear} <span style="color: var(--color-itb-pink); font-weight: 600;">ITB Mantenimiento</span>. Todos los derechos reservados.</p>
     </div>
   </div>
 
-  <!-- Botón flotante de WhatsApp -->
   <a 
     href={whatsappLink} 
     target="_blank"
