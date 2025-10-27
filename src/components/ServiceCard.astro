@@ -1,0 +1,27 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  features: string[];
+}
+
+const { icon, title, description, features } = Astro.props;
+---
+
+<div style="background-color: var(--color-itb-black); padding: 2rem; border-radius: 0.5rem; border: 2px solid var(--color-itb-gray); transition: all 0.3s ease;"
+     onmouseover="this.style.borderColor='var(--color-itb-pink)'; this.style.transform='scale(1.05)';"
+     onmouseout="this.style.borderColor='var(--color-itb-gray)'; this.style.transform='scale(1)';">
+  <div style="font-size: 3rem; margin-bottom: 1rem;">{icon}</div>
+  <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.75rem; color: var(--color-itb-pink);">{title}</h3>
+  <p style="color: var(--color-itb-gray-light); margin-bottom: 1.5rem;">{description}</p>
+  
+  <ul style="list-style: none; padding: 0; margin: 0;">
+    {features.map(feature => (
+      <li style="display: flex; align-items: start; color: var(--color-itb-gray-light); margin-bottom: 0.5rem;">
+        <span style="color: var(--color-itb-pink); margin-right: 0.5rem; flex-shrink: 0;">✓</span>
+        <span>{feature}</span>
+      </li>
+    ))}
+  </ul>
+</div>

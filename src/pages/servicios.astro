@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const services = [
+  {
+    icon: '🔧',
+    title: 'Reparación Hardware',
+    description: 'Diagnóstico y reparación de componentes físicos',
+    features: [
+      'Cambio de componentes defectuosos',
+      'Actualización de RAM y discos',
+      'Reparación de placas madre',
+      'Limpieza interna profunda'
+    ]
+  },
+  {
+    icon: '💻',
+    title: 'Instalación de SO',
+    description: 'Formateo e instalación de sistemas operativos',
+    features: [
+      'Windows 10/11',
+      'Distribuciones Linux',
+      'Instalación de drivers',
+      'Configuración inicial del sistema'
+    ]
+  },
+  {
+    icon: '⚙️',
+    title: 'Mantenimiento Preventivo',
+    description: 'Optimización y limpieza de equipos',
+    features: [
+      'Limpieza de virus y malware',
+      'Optimización de rendimiento',
+      'Actualización de software',
+      'Backup de datos'
+    ]
+  },
+  {
+    icon: '🖥️',
+    title: 'Configuración de Redes',
+    description: 'Instalación y configuración de redes',
+    features: [
+      'Configuración de routers',
+      'Redes domésticas',
+      'Solución de problemas de conectividad',
+      'Optimización de WiFi'
+    ]
+  },
+  {
+    icon: '💾',
+    title: 'Recuperación de Datos',
+    description: 'Rescate de información perdida',
+    features: [
+      'Recuperación de discos dañados',
+      'Extracción de datos',
+      'Clonado de discos',
+      'Migración de datos'
+    ]
+  },
+  {
+    icon: '🛡️',
+    title: 'Seguridad Informática',
+    description: 'Protección de equipos y datos',
+    features: [
+      'Instalación de antivirus',
+      'Configuración de firewall',
+      'Actualizaciones de seguridad',
+      'Asesoramiento en protección'
+    ]
+  }
+];
+---
+
+<Layout title="Servicios | ITB Mantenimiento">
+  <Header />
+  
+  <main style="padding-top: 6rem; min-height: 100vh; background-color: var(--color-itb-black);">
+    <!-- Hero Section -->
+    <section style="padding: 5rem 1rem; background: linear-gradient(to bottom, var(--color-itb-gray-dark), var(--color-itb-black));">
+      <div style="max-width: 64rem; margin: 0 auto; text-align: center;">
+        <h1 style="font-size: 3.75rem; font-weight: bold; margin-bottom: 1.5rem;">
+          Nuestros <span style="color: var(--color-itb-pink);">Servicios</span>
+        </h1>
+        <p style="font-size: 1.25rem; color: var(--color-itb-gray-light);">
+          Soluciones completas para todas tus necesidades informáticas
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section style="padding: 5rem 1rem;">
+      <div style="max-width: 80rem; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          {services.map(service => (
+            <div style="background-color: var(--color-itb-black); padding: 2rem; border-radius: 0.5rem; border: 2px solid var(--color-itb-gray); transition: border-color 0.3s ease, transform 0.3s ease;"
+                 onmouseover="this.style.borderColor='var(--color-itb-pink)'; this.style.transform='translateY(-5px)';"
+                 onmouseout="this.style.borderColor='var(--color-itb-gray)'; this.style.transform='translateY(0)';">
+              <div style="font-size: 3rem; margin-bottom: 1rem;">{service.icon}</div>
+              <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.75rem; color: var(--color-itb-pink);">{service.title}</h3>
+              <p style="color: var(--color-itb-gray-light); margin-bottom: 1.5rem;">{service.description}</p>
+              
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                {service.features.map(feature => (
+                  <li style="display: flex; align-items: start; color: var(--color-itb-gray-light); margin-bottom: 0.5rem;">
+                    <span style="color: var(--color-itb-pink); margin-right: 0.5rem; flex-shrink: 0;">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 5rem 1rem; background-color: var(--color-itb-gray-dark);">
+      <div style="max-width: 64rem; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 1.5rem;">
+          ¿Necesitas ayuda con tu equipo?
+        </h2>
+        <p style="font-size: 1.25rem; color: var(--color-itb-gray-light); margin-bottom: 2rem;">
+          Contáctanos y te ayudaremos a resolver cualquier problema
+        </p>
+        <a 
+          href="/contacto" 
+          style="display: inline-block; background-color: var(--color-itb-pink); color: white; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; font-size: 1.125rem; text-decoration: none; transition: all 0.3s ease;"
+          onmouseover="this.style.backgroundColor='var(--color-itb-pink-dark)'; this.style.transform='scale(1.05)';"
+          onmouseout="this.style.backgroundColor='var(--color-itb-pink)'; this.style.transform='scale(1)';"
+        >
+          Solicitar Servicio
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

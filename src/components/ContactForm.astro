@@ -1,0 +1,87 @@
+<form style="max-width: 42rem; margin: 0 auto; background-color: var(--color-itb-gray-dark); padding: 2rem; border-radius: 0.5rem; border: 2px solid var(--color-itb-gray);">
+  <div style="margin-bottom: 1.5rem;">
+    <label for="name" style="display: block; color: var(--color-itb-gray-light); margin-bottom: 0.5rem; font-weight: 500;">Nombre Completo</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      required
+      style="width: 100%; padding: 0.75rem 1rem; background-color: var(--color-itb-black); border: 2px solid var(--color-itb-gray); border-radius: 0.5rem; color: white; font-family: inherit; font-size: 1rem;"
+      onfocus="this.style.borderColor='var(--color-itb-pink)'; this.style.outline='none';"
+      onblur="this.style.borderColor='var(--color-itb-gray)';"
+    >
+  </div>
+
+  <div style="margin-bottom: 1.5rem;">
+    <label for="email" style="display: block; color: var(--color-itb-gray-light); margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      required
+      style="width: 100%; padding: 0.75rem 1rem; background-color: var(--color-itb-black); border: 2px solid var(--color-itb-gray); border-radius: 0.5rem; color: white; font-family: inherit; font-size: 1rem;"
+      onfocus="this.style.borderColor='var(--color-itb-pink)'; this.style.outline='none';"
+      onblur="this.style.borderColor='var(--color-itb-gray)';"
+    >
+  </div>
+
+  <div style="margin-bottom: 1.5rem;">
+    <label for="phone" style="display: block; color: var(--color-itb-gray-light); margin-bottom: 0.5rem; font-weight: 500;">Teléfono</label>
+    <input 
+      type="tel" 
+      id="phone" 
+      name="phone"
+      style="width: 100%; padding: 0.75rem 1rem; background-color: var(--color-itb-black); border: 2px solid var(--color-itb-gray); border-radius: 0.5rem; color: white; font-family: inherit; font-size: 1rem;"
+      onfocus="this.style.borderColor='var(--color-itb-pink)'; this.style.outline='none';"
+      onblur="this.style.borderColor='var(--color-itb-gray)';"
+    >
+  </div>
+
+  <div style="margin-bottom: 1.5rem;">
+    <label for="service" style="display: block; color: var(--color-itb-gray-light); margin-bottom: 0.5rem; font-weight: 500;">Servicio</label>
+    <select 
+      id="service" 
+      name="service"
+      style="width: 100%; padding: 0.75rem 1rem; background-color: var(--color-itb-black); border: 2px solid var(--color-itb-gray); border-radius: 0.5rem; color: white; font-family: inherit; font-size: 1rem;"
+      onfocus="this.style.borderColor='var(--color-itb-pink)'; this.style.outline='none';"
+      onblur="this.style.borderColor='var(--color-itb-gray)';"
+    >
+      <option value="">Selecciona un servicio</option>
+      <option value="hardware">Reparación Hardware</option>
+      <option value="software">Instalación de Software</option>
+      <option value="mantenimiento">Mantenimiento Preventivo</option>
+      <option value="formateo">Formateo e Instalación SO</option>
+      <option value="otro">Otro</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 1.5rem;">
+    <label for="message" style="display: block; color: var(--color-itb-gray-light); margin-bottom: 0.5rem; font-weight: 500;">Mensaje</label>
+    <textarea 
+      id="message" 
+      name="message" 
+      rows="5"
+      required
+      style="width: 100%; padding: 0.75rem 1rem; background-color: var(--color-itb-black); border: 2px solid var(--color-itb-gray); border-radius: 0.5rem; color: white; resize: none; font-family: inherit; font-size: 1rem;"
+      onfocus="this.style.borderColor='var(--color-itb-pink)'; this.style.outline='none';"
+      onblur="this.style.borderColor='var(--color-itb-gray)';"
+    ></textarea>
+  </div>
+
+  <button 
+    type="submit"
+    style="width: 100%; background-color: var(--color-itb-pink); color: white; padding: 0.75rem; border-radius: 0.5rem; font-weight: 600; border: none; cursor: pointer; font-size: 1rem; transition: all 0.3s ease;"
+    onmouseover="this.style.backgroundColor='var(--color-itb-pink-dark)'; this.style.transform='scale(1.05)';"
+    onmouseout="this.style.backgroundColor='var(--color-itb-pink)'; this.style.transform='scale(1)';"
+  >
+    Enviar Mensaje
+  </button>
+</form>
+
+<script>
+  const form = document.querySelector('form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('¡Formulario enviado! (Conecta con tu backend)');
+  });
+</script>

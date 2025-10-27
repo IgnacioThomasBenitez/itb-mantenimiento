@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-itb-pink: #E91E8C;
+  --color-itb-pink-dark: #D81B60;
+  --color-itb-gray: #8B8B8B;
+  --color-itb-gray-light: #A8A8A8;
+  --color-itb-gray-dark: #404040;
+  --color-itb-black: #000000;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-tech: 'Roboto Mono', monospace;
+}
+
+/* Estilos base */
+* {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Componentes reutilizables */
+.btn-primary {
+  background-color: var(--color-itb-pink);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 200ms;
+  transform: scale(1);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-itb-pink-dark);
+  transform: scale(1.05);
+}
+
+.card {
+  background-color: var(--color-itb-gray-dark);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-itb-gray);
+  transition: border-color 200ms;
+}
+
+.card:hover {
+  border-color: var(--color-itb-pink);
+}

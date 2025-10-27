@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="ITB Mantenimiento | Inicio">
+  <Header />
+  
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-[--color-itb-black] via-[--color-itb-gray-dark] to-[--color-itb-black] pt-16">
+    <div class="text-center px-4">
+      <img 
+        src="/logo.jpg" 
+        alt="ITB Logo" 
+        style="width: 16rem; margin: 0 auto 2rem; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;"
+      >
+      <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1.5rem; line-height: 1.2;">
+        <span style="color: var(--color-itb-gray);">ITB</span> 
+        <span style="color: var(--color-itb-pink);">Mantenimiento</span>
+      </h1>
+      <p style="font-size: 1.25rem; color: var(--color-itb-gray-light); margin-bottom: 2rem;">
+        Expertos en reparación y optimización de equipos informáticos
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a 
+          href="/servicios" 
+          style="background-color: var(--color-itb-pink); color: white; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-block;"
+          onmouseover="this.style.transform='scale(1.05)'; this.style.backgroundColor='var(--color-itb-pink-dark)';"
+          onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='var(--color-itb-pink)';"
+        >
+          Nuestros Servicios
+        </a>
+        <a 
+          href="/contacto" 
+          style="border: 2px solid var(--color-itb-pink); color: var(--color-itb-pink); background-color: transparent; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease;"
+          onmouseover="this.style.backgroundColor='var(--color-itb-pink)'; this.style.color='white';"
+          onmouseout="this.style.backgroundColor='transparent'; this.style.color='var(--color-itb-pink)';"
+        >
+          Contacto
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Preview -->
+  <section style="padding: 5rem 1rem; background-color: var(--color-itb-gray-dark);">
+    <div style="max-width: 72rem; margin: 0 auto;">
+      <h2 style="font-size: 2.25rem; font-weight: bold; text-align: center; margin-bottom: 3rem;">
+        Nuestros <span style="color: var(--color-itb-pink);">Servicios</span>
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <!-- Tarjeta 1 -->
+        <div style="background-color: var(--color-itb-black); padding: 1.5rem; border-radius: 0.5rem; border: 2px solid var(--color-itb-gray); transition: border-color 0.3s ease;"
+             onmouseover="this.style.borderColor='var(--color-itb-pink)';"
+             onmouseout="this.style.borderColor='var(--color-itb-gray)';">
+          <div style="color: var(--color-itb-pink); font-size: 2.5rem; margin-bottom: 1rem;">🔧</div>
+          <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.75rem; color: white;">Reparación Hardware</h3>
+          <p style="color: var(--color-itb-gray-light); line-height: 1.5;">Diagnóstico y reparación de componentes físicos</p>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div style="background-color: var(--color-itb-black); padding: 1.5rem; border-radius: 0.5rem; border: 2px solid var(--color-itb-gray); transition: border-color 0.3s ease;"
+             onmouseover="this.style.borderColor='var(--color-itb-pink)';"
+             onmouseout="this.style.borderColor='var(--color-itb-gray)';">
+          <div style="color: var(--color-itb-pink); font-size: 2.5rem; margin-bottom: 1rem;">💻</div>
+          <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.75rem; color: white;">Instalación de SO</h3>
+          <p style="color: var(--color-itb-gray-light); line-height: 1.5;">Formateo e instalación de sistemas operativos</p>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div style="background-color: var(--color-itb-black); padding: 1.5rem; border-radius: 0.5rem; border: 2px solid var(--color-itb-gray); transition: border-color 0.3s ease;"
+             onmouseover="this.style.borderColor='var(--color-itb-pink)';"
+             onmouseout="this.style.borderColor='var(--color-itb-gray)';">
+          <div style="color: var(--color-itb-pink); font-size: 2.5rem; margin-bottom: 1rem;">⚙️</div>
+          <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.75rem; color: white;">Mantenimiento Preventivo</h3>
+          <p style="color: var(--color-itb-gray-light); line-height: 1.5;">Optimización y limpieza de equipos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 4.5rem !important;
+    }
+    p {
+      font-size: 1.5rem !important;
+    }
+  }
+</style>
