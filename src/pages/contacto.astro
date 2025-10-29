@@ -1,19 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import ContactForm from '../components/ContactForm.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
 <Layout title="Contacto | ITB Mantenimiento">
   <Header />
-  
-  <main style="padding-top: 6rem; min-height: 100vh; background-color: var(--color-itb-black);">
+
+  <main
+    style="padding-top: 6rem; min-height: 100vh; background-color: var(--color-itb-black);"
+  >
     <!-- Hero Section -->
-    <section style="padding: 5rem 1rem; background: linear-gradient(to bottom, var(--color-itb-gray-dark), var(--color-itb-black));">
+    <section
+      style="padding: 5rem 1rem; background: linear-gradient(to bottom, var(--color-itb-gray-dark), var(--color-itb-black));"
+    >
       <div style="max-width: 64rem; margin: 0 auto; text-align: center;">
-        <h1 style="font-size: 3.75rem; font-weight: bold; margin-bottom: 1.5rem;">
-          <span style="color: var(--color-itb-pink);">Contáctanos</span>
+        <h1
+          style="font-size: 3.75rem; font-weight: bold; margin-bottom: 1.5rem;"
+        >
+          <span style="color: var(--color-itb-pink);">Contactanos</span>
         </h1>
         <p style="font-size: 1.25rem; color: var(--color-itb-gray-light);">
           Estamos listos para ayudarte con tu equipo
@@ -24,50 +30,51 @@ import ContactForm from '../components/ContactForm.astro';
     <!-- Contact Section -->
     <section style="padding: 5rem 1rem;">
       <div style="max-width: 80rem; margin: 0 auto;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
-          
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;"
+        >
           <!-- Info de Contacto -->
           <div>
-            <h2 style="font-size: 1.875rem; font-weight: bold; margin-bottom: 2rem; color: white;">
-              Información de <span style="color: var(--color-itb-pink);">Contacto</span>
+            <h2
+              style="font-size: 1.875rem; font-weight: bold; margin-bottom: 2rem; color: white;"
+            >
+            <span style="color: var(--color-itb-pink);">Contacto</span>
             </h2>
-            
+
             <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-              
               <!-- Email -->
               <div style="display: flex; align-items: flex-start; gap: 1rem;">
                 <div style="font-size: 2rem; color: var(--color-itb-pink);">📧</div>
                 <div>
-                  <h3 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem; color: white;">Email</h3>
-                  <a href="mailto:info@itbmantenimiento.com"
-                     style="color: var(--color-itb-gray-light); text-decoration: none; transition: color 0.3s;"
-                     onmouseover="this.style.color='var(--color-itb-pink)';"
-                     onmouseout="this.style.color='var(--color-itb-gray-light)';">
-                    info@itbmantenimiento.com
+                  <h3
+                    style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem; color: white;"
+                  >
+                    Email
+                  </h3>
+                  <a
+                    href="mailto:benitezignacio46@gmail.com"
+                    style="color: var(--color-itb-gray-light); text-decoration: none; transition: color 0.3s;"
+                    onmouseover="this.style.color='var(--color-itb-pink)';"
+                    onmouseout="this.style.color='var(--color-itb-gray-light)';"
+                  >
+                    benitezignacio46@gmail.com
                   </a>
                 </div>
               </div>
 
-              <!-- Teléfono -->
-              <div style="display: flex; align-items: flex-start; gap: 1rem;">
-                <div style="font-size: 2rem; color: var(--color-itb-pink);">📱</div>
-                <div>
-                  <h3 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem; color: white;">Teléfono</h3>
-                  <a href="tel:+542215610748"
-                     style="color: var(--color-itb-gray-light); text-decoration: none; transition: color 0.3s;"
-                     onmouseover="this.style.color='var(--color-itb-pink)';"
-                     onmouseout="this.style.color='var(--color-itb-gray-light)';">
-                    +54 9 221 5610748
-                  </a>
-                </div>
-              </div>
-
+              
               <!-- Ubicación -->
               <div style="display: flex; align-items: flex-start; gap: 1rem;">
                 <div style="font-size: 2rem; color: var(--color-itb-pink);">📍</div>
                 <div>
-                  <h3 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem; color: white;">Ubicación</h3>
-                  <p style="color: var(--color-itb-gray-light);">Berisso, Buenos Aires, Argentina</p>
+                  <h3
+                    style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem; color: white;"
+                  >
+                    Ubicación
+                  </h3>
+                  <p style="color: var(--color-itb-gray-light);">
+                    Berisso, Buenos Aires, Argentina
+                  </p>
                 </div>
               </div>
 
@@ -75,37 +82,94 @@ import ContactForm from '../components/ContactForm.astro';
               <div style="display: flex; align-items: flex-start; gap: 1rem;">
                 <div style="font-size: 2rem; color: var(--color-itb-pink);">🕐</div>
                 <div>
-                  <h3 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem; color: white;">Horario</h3>
-                  <p style="color: var(--color-itb-gray-light); margin-bottom: 0.25rem;">Lunes a Viernes: 9:00 - 18:00</p>
-                  <p style="color: var(--color-itb-gray-light);">Sábados: 9:00 - 13:00</p>
+                  <h3
+                    style="font-weight: bold; font-size: 1.125rem; margin-bottom: 0.25rem; color: white;"
+                  >
+                    Horario
+                  </h3>
+                  <p
+                    style="color: var(--color-itb-gray-light); margin-bottom: 0.25rem;"
+                  >
+                    Lunes a Viernes: 9:00 - 18:00
+                  </p>
+                  <p style="color: var(--color-itb-gray-light);">
+                    Sábados: 9:00 - 13:00
+                  </p>
                 </div>
               </div>
             </div>
 
             <!-- Redes Sociales -->
             <div style="margin-top: 3rem;">
-              <h3 style="font-weight: bold; font-size: 1.125rem; margin-bottom: 1rem; color: white;">Síguenos</h3>
+              <h3
+                style="font-weight: bold; font-size: 1.125rem; margin-bottom: 1rem; color: white;"
+              >
+                Síguenos
+              </h3>
               <div style="display: flex; gap: 1rem;">
-                <a href="#" 
-                   style="font-size: 2rem; transition: transform 0.3s;"
-                   aria-label="Facebook"
-                   onmouseover="this.style.transform='scale(1.2)';"
-                   onmouseout="this.style.transform='scale(1)';">
-                  📘
+                <a
+                  href="https://www.facebook.com/profile.php?id=61571168024086"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="transition: transform 0.3s;"
+                  aria-label="Facebook"
+                  onmouseover="this.style.transform='scale(1.2)';"
+                  onmouseout="this.style.transform='scale(1)';"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    style="width: 2.5rem; height: 2.5rem;"
+                    viewBox="0 0 512 512"
+                    fill="#1877F2"
+                  >
+                    <path
+                      d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376.4 82.7 477.4 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256z"
+                    ></path>
+                  </svg>
                 </a>
-                <a href="#" 
-                   style="font-size: 2rem; transition: transform 0.3s;"
-                   aria-label="Instagram"
-                   onmouseover="this.style.transform='scale(1.2)';"
-                   onmouseout="this.style.transform='scale(1)';">
-                  📷
-                </a>
-                <a href="#" 
-                   style="font-size: 2rem; transition: transform 0.3s;"
-                   aria-label="Twitter"
-                   onmouseover="this.style.transform='scale(1.2)';"
-                   onmouseout="this.style.transform='scale(1)';">
-                  🐦
+
+                <a
+                  href="https://www.instagram.com/itb_mantenimiento/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="transition: transform 0.3s;"
+                  aria-label="Instagram"
+                  onmouseover="this.style.transform='scale(1.2)';"
+                  onmouseout="this.style.transform='scale(1)';"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    style="width: 2.5rem; height: 2.5rem;"
+                    viewBox="0 0 512 512"
+                  >
+                    <defs>
+                      <linearGradient
+                        id="instagram-gradient"
+                        x1="0%"
+                        y1="100%"
+                        x2="100%"
+                        y2="0%"
+                      >
+                        <stop offset="0%" style="stop-color:#FFD521;"></stop>
+                        <stop offset="5%" style="stop-color:#FFD521;"></stop>
+                        <stop offset="50%" style="stop-color:#F50000;"></stop>
+                        <stop offset="95%" style="stop-color:#B900B4;"></stop>
+                        <stop offset="100%" style="stop-color:#B900B4;"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path
+                      fill="url(#instagram-gradient)"
+                      d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"
+                    ></path>
+                    <path
+                      fill="url(#instagram-gradient)"
+                      d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"
+                    ></path>
+                    <path
+                      fill="url(#instagram-gradient)"
+                      d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"
+                    ></path>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -113,7 +177,9 @@ import ContactForm from '../components/ContactForm.astro';
 
           <!-- Formulario -->
           <div>
-            <h2 style="font-size: 1.875rem; font-weight: bold; margin-bottom: 2rem; color: white;">
+            <h2
+              style="font-size: 1.875rem; font-weight: bold; margin-bottom: 2rem; color: white;"
+            >
               Envíanos un <span style="color: var(--color-itb-pink);">Mensaje</span>
             </h2>
             <ContactForm />
@@ -122,6 +188,8 @@ import ContactForm from '../components/ContactForm.astro';
       </div>
     </section>
   </main>
+
+  <Footer />
 </Layout>
 
 <style>
