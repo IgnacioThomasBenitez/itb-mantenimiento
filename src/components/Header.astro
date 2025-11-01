@@ -1,18 +1,23 @@
 ---
 const navItems = [
-  { name: 'Inicio', href: '/' },
-  { name: 'Servicios', href: '/servicios' },
-  { name: 'Proyectos', href: '/proyectos' },
-  { name: 'Contacto', href: '/contacto' }
+  { name: "Servicios", href: "/servicios" },
+  { name: "Proyectos", href: "/proyectos" },
+  { name: "Contacto", href: "/contacto" },
 ];
 ---
 
-<header style="position: fixed; width: 100%; top: 0; z-index: 50; background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-itb-gray);">
+<header
+  style="position: fixed; width: 100%; top: 0; z-index: 50; background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-itb-gray);"
+>
   <nav style="max-width: 1280px; margin: 0 auto; padding: 0 1rem;">
-    <div style="display: flex; justify-content: space-between; align-items: center; height: 64px;">
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; height: 64px;"
+    >
       <!-- Logo -->
-      <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-        
+      <a
+        href="/"
+        style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"
+      >
         <span style="font-size: 1.25rem; font-weight: bold;">
           <span style="color: var(--color-itb-gray);">ITB</span>
           <span style="color: var(--color-itb-pink);"> Mantenimiento</span>
@@ -21,72 +26,85 @@ const navItems = [
 
       <!-- Desktop Navigation -->
       <div id="desktop-nav" style="display: none; gap: 2rem;">
-        {navItems.map(item => (
-          <a 
-            href={item.href} 
-            style="color: var(--color-itb-gray-light); font-weight: 500; text-decoration: none; transition: color 0.3s;"
-            onmouseover="this.style.color='var(--color-itb-pink)'"
-            onmouseout="this.style.color='var(--color-itb-gray-light)'"
-          >
-            {item.name}
-          </a>
-        ))}
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              style="color: var(--color-itb-gray-light); font-weight: 500; text-decoration: none; transition: all 0.3s; padding: 0.5rem 1rem; border-radius: 0.5rem; border: 2px solid transparent;"
+              onmouseover="this.style.borderColor='var(--color-itb-pink)'; this.style.color='var(--color-itb-pink)'"
+              onmouseout="this.style.borderColor='transparent'; this.style.color='var(--color-itb-gray-light)'"
+            >
+              {item.name}
+            </a>
+          ))
+        }
       </div>
 
       <!-- Mobile Menu Button -->
-      <button 
+      <button
         id="mobile-menu-button"
         style="color: var(--color-itb-gray-light); background: none; border: none; cursor: pointer; padding: 0.5rem;"
         aria-label="Abrir menú"
       >
-        <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        <svg
+          style="width: 24px; height: 24px;"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" style="display: none; padding-bottom: 1rem;">
-      {navItems.map(item => (
-        <a 
-          href={item.href}
-          style="display: block; padding: 0.5rem 0; color: var(--color-itb-gray-light); text-decoration: none; transition: color 0.3s;"
-          onmouseover="this.style.color='var(--color-itb-pink)'"
-          onmouseout="this.style.color='var(--color-itb-gray-light)'"
-        >
-          {item.name}
-        </a>
-      ))}
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            style="display: block; padding: 0.5rem 0; color: var(--color-itb-gray-light); text-decoration: none; transition: color 0.3s;"
+            onmouseover="this.style.color='var(--color-itb-pink)'"
+            onmouseout="this.style.color='var(--color-itb-gray-light)'"
+          >
+            {item.name}
+          </a>
+        ))
+      }
     </div>
   </nav>
 </header>
 
 <script>
-  // Show desktop menu on larger screens
+  // Mostrar el menú del escritorio en pantallas más grandes
   function updateNav() {
-    const desktopNav = document.getElementById('desktop-nav');
-    const mobileButton = document.getElementById('mobile-menu-button');
-    
+    const desktopNav = document.getElementById("desktop-nav");
+    const mobileButton = document.getElementById("mobile-menu-button");
+
     if (window.innerWidth >= 768) {
-      if (desktopNav) desktopNav.style.display = 'flex';
-      if (mobileButton) mobileButton.style.display = 'none';
+      if (desktopNav) desktopNav.style.display = "flex";
+      if (mobileButton) mobileButton.style.display = "none";
     } else {
-      if (desktopNav) desktopNav.style.display = 'none';
-      if (mobileButton) mobileButton.style.display = 'block';
+      if (desktopNav) desktopNav.style.display = "none";
+      if (mobileButton) mobileButton.style.display = "block";
     }
   }
 
   // Mobile menu toggle
-  const button = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  
-  button?.addEventListener('click', () => {
+  const button = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+
+  button?.addEventListener("click", () => {
     if (menu) {
-      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+      menu.style.display = menu.style.display === "none" ? "block" : "none";
     }
   });
 
-  // Initialize and listen for resize
+  // Inicializar y escuchar para cambiar el tamaño
   updateNav();
-  window.addEventListener('resize', updateNav);
+  window.addEventListener("resize", updateNav);
 </script>
