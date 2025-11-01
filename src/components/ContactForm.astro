@@ -4,7 +4,7 @@
     <input 
       type="text" 
       id="name" 
-      name="from_name"
+      name="name" 
       required
       style="width: 100%; padding: 0.75rem 1rem; background-color: var(--color-itb-black); border: 2px solid var(--color-itb-gray); border-radius: 0.5rem; color: white; font-family: inherit; font-size: 1rem;"
       onfocus="this.style.borderColor='var(--color-itb-pink)'; this.style.outline='none';"
@@ -17,7 +17,7 @@
     <input 
       type="email" 
       id="email" 
-      name="reply_to"
+      name="email" 
       required
       style="width: 100%; padding: 0.75rem 1rem; background-color: var(--color-itb-black); border: 2px solid var(--color-itb-gray); border-radius: 0.5rem; color: white; font-family: inherit; font-size: 1rem;"
       onfocus="this.style.borderColor='var(--color-itb-pink)'; this.style.outline='none';"
@@ -48,11 +48,11 @@
       onblur="this.style.borderColor='var(--color-itb-gray)';"
     >
       <option value="">Selecciona un servicio</option>
-      <option value="Reparacion Hardware">Reparacion Hardware</option>
-      <option value="Instalacion de Software">Instalacion de Software</option>
-      <option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
-      <option value="Formateo e Instalacion SO">Formateo e Instalacion SO</option>
-      <option value="Otro">Otro</option>
+      <option value="hardware">Reparacion Hardware</option>
+      <option value="software">Instalacion de Software</option>
+      <option value="mantenimiento">Mantenimiento Preventivo</option>
+      <option value="formateo">Formateo e Instalacion SO</option>
+      <option value="otro">Otro</option>
     </select>
   </div>
 
@@ -71,7 +71,6 @@
 
   <button 
     type="submit"
-    id="submitButton"
     style="width: 100%; background-color: var(--color-itb-pink); color: white; padding: 0.75rem; border-radius: 0.5rem; font-weight: 600; border: none; cursor: pointer; font-size: 1rem; transition: all 0.3s ease;"
     onmouseover="this.style.backgroundColor='var(--color-itb-pink-dark)'; this.style.transform='scale(1.05)';"
     onmouseout="this.style.backgroundColor='var(--color-itb-pink)'; this.style.transform='scale(1)';"
@@ -83,62 +82,78 @@
 </form>
 
 <script is:inline>
+  // Esperar a que EmailJS se cargue
   function initContactForm() {
+    // Verificar que EmailJS esté disponible
     if (typeof emailjs === 'undefined') {
+      console.error('EmailJS no esta cargado');
       setTimeout(initContactForm, 100);
       return;
     }
 
+    // Inicializar EmailJS
     emailjs.init("0mfER7R_j1KtnPMs8");
 
     const form = document.getElementById("contactForm");
     const statusMessage = document.getElementById("statusMessage");
-    const submitButton = document.getElementById("submitButton");
 
     if (form && !form.dataset.initialized) {
       form.dataset.initialized = "true";
       
-      form.addEventListener("submit", function(e) {
+      form.addEventListener("submit", async function(e) {
         e.preventDefault();
 
-        // Deshabilitar boton
-        submitButton.disabled = true;
-        submitButton.textContent = "Enviando...";
+        const nombre = form.name.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone.value.trim();
+        const service = form.service.value;
+        const message = form.message.value.trim();
 
+        if (!nombre || !email || !service || !message) {
+          statusMessage.style.display = "block";
+          statusMessage.style.color = "#ef4444";
+          statusMessage.textContent = "Por favor, completa todos los campos obligatorios.";
+          return;
+        }
+
+        // Mostrar mensaje de envio
         statusMessage.style.display = "block";
         statusMessage.style.color = "var(--color-itb-gray-light)";
         statusMessage.textContent = "⏳ Enviando mensaje...";
 
-        // Usar sendForm en lugar de send
-        emailjs.sendForm(
-          "service_icutguk",
-          "template_l6pnmu5",
-          form
-        ).then(
-          function(response) {
-            console.log("SUCCESS!", response.status, response.text);
-            statusMessage.style.color = "#22c55e";
-            statusMessage.textContent = "✅ Mensaje enviado con exito!";
-            form.reset();
-            
-            setTimeout(function() {
-              statusMessage.style.display = "none";
-              submitButton.disabled = false;
-              submitButton.textContent = "Enviar Mensaje";
-            }, 5000);
-          },
-          function(error) {
-            console.error("FAILED...", error);
-            statusMessage.style.color = "#ef4444";
-            statusMessage.textContent = "❌ Error: " + (error.text || "Intenta nuevamente");
-            submitButton.disabled = false;
-            submitButton.textContent = "Enviar Mensaje";
-          }
-        );
+        const templateParams = {
+          nombre: nombre,
+          email: email,
+          phone: phone,
+          service: service,
+          message: message,
+          fecha: new Date().toLocaleString("es-AR")
+        };
+
+        try {
+          await emailjs.send(
+            "service_icutguk",
+            "template_l6pnmu5",
+            templateParams
+          );
+
+          statusMessage.style.color = "#22c55e";
+          statusMessage.textContent = "✅ Mensaje enviado con exito!";
+          form.reset();
+          
+          setTimeout(function() {
+            statusMessage.style.display = "none";
+          }, 5000);
+        } catch (error) {
+          console.error("Error enviando el email:", error);
+          statusMessage.style.color = "#ef4444";
+          statusMessage.textContent = "❌ Error al enviar el mensaje. Intenta nuevamente.";
+        }
       });
     }
   }
 
+  // Cargar EmailJS y luego inicializar el formulario
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       const script = document.createElement('script');
