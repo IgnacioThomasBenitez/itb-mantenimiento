@@ -72,8 +72,8 @@ Enviar Mensaje
 
         try {
           await emailjs.send(
-            "service_icutguk",
-            "template_l6pnmu5",
+            "service_lo2b244",
+            "template_05e5l88",
             templateParams
           );
 
@@ -88,6 +88,7 @@ Enviar Mensaje
           console.error("Error enviando el email:", error);
           statusMessage.style.color = "#ef4444";
           statusMessage.textContent = "❌ Error al enviar el mensaje. Intenta nuevamente.";
+          console.log(templateParams);
         }
       });
     }

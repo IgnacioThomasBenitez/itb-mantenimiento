@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.2.11",
+    "@astrojs/vercel": "^8.0.4",
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.1.16",
     "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.15.1",
